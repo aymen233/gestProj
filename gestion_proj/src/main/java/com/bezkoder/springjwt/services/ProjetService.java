@@ -18,7 +18,7 @@ public class ProjetService {
 		projetRepository.save(projet);
 	}
 
-	public List<Projet> getAllProjetUser(Integer id) {
+	public List<Projet> getAllProjetUser(Long id) {
 		return (List<Projet>) projetRepository.findByUserId(id);
 	}
 

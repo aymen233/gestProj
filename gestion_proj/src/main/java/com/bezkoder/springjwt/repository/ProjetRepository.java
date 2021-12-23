@@ -10,5 +10,5 @@ import com.bezkoder.springjwt.models.Projet;
 @Repository
 public interface ProjetRepository extends CrudRepository<Projet, Integer> {
 
-	public List<Projet> findByUserId(Integer id);
+	public List<Projet> findByUserId(Long id);
 }

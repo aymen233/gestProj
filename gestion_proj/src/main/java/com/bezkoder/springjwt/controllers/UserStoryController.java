@@ -37,7 +37,7 @@ public class UserStoryController {
 		return userStoryService.getUserStory(id);
 	}
 
-	@PutMapping(" /userStory/{id}")
+	@PutMapping("/userStory/{id}")
 	public void updateUserStory(@PathVariable Integer id, @RequestBody UserStory userStory) {
 		userStoryService.updateUserStory(id, userStory);
 	}
