@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bezkoder.springjwt.models.Projet;
+import com.bezkoder.springjwt.repository.ProjetRepository;
+import com.bezkoder.springjwt.repository.UserRepository;
 import com.bezkoder.springjwt.services.ProjetService;
 
 @CrossOrigin(origins = "*")
@@ -22,6 +24,12 @@ public class ProjetController {
 
 	@Autowired
 	private ProjetService projetService;
+
+	@Autowired
+	private ProjetRepository projetRepository;
+
+	@Autowired
+	private UserRepository userRepository;
 
 	@PostMapping("/projet")
 	public void addproject(@RequestBody Projet projet) {
@@ -47,4 +55,5 @@ public class ProjetController {
 	public void deleteProjet(@PathVariable Integer id) {
 		projetService.deleteProjet(id);
 	}
+
 }
