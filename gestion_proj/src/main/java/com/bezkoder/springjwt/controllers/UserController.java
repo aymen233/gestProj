@@ -41,9 +41,8 @@ public class UserController {
 		userService.Invitation(idUser, idProjet);
 	}
 
-	@PostMapping("findIdByEmail/{adresse}")
+	@GetMapping("findIdByEmail/{email}")
 	public Integer findIdByEmail(@PathVariable String email) {
 		return userService.findIdByEmail(email);
 	}
-
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.bezkoder.springjwt.models.User;
@@ -18,6 +19,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 	public List<User> findByProjetId(Integer id);
 
-	public Integer findIdByemail(String email);
-
+	@Query(value = "SELECT id FROM users WHERE email=?1", nativeQuery = true)
+	Integer findIdByemail(String email);
 }
