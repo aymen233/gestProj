@@ -32,6 +32,11 @@ public class UserStoryController {
 		return userStoryService.getAllUserStoryProjet(id);
 	}
 
+	@GetMapping("/userStorybySprintId/{id}")
+	public List<UserStory> getAllUserStoryBySprintId(@PathVariable Integer id) {
+		return userStoryService.getAllUserStoryBySprintId(id);
+	}
+
 	@GetMapping("/userStory/{id}")
 	public Optional<UserStory> getUserStory(@PathVariable Integer id) {
 		return userStoryService.getUserStory(id);
@@ -41,6 +46,12 @@ public class UserStoryController {
 	public void updateUserStory(@PathVariable Integer id, @RequestBody UserStory userStory) {
 		userStoryService.updateUserStory(id, userStory);
 	}
+
+	/*
+	 * @PutMapping("/userStoryEtat/{id}") public void
+	 * updateEtatUserStory(@PathVariable Integer id, @RequestBody UserStory
+	 * userStory) { userStoryService.updateEtatUserStory(id, userStory); }
+	 */
 
 	@DeleteMapping("/userStory/{id}")
 	public void deleteUserStory(@PathVariable Integer id) {

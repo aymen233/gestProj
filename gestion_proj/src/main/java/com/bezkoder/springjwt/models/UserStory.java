@@ -1,6 +1,8 @@
 package com.bezkoder.springjwt.models;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -17,8 +19,11 @@ public class UserStory {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	private String userStory;
-	private String avancement;
+	private String nom;
+	@Enumerated(EnumType.STRING)
+	private EtatUserStory avancement;
 	@ManyToOne
 	private Projet projet;
+	@ManyToOne
+	private SprintBacklog sprintBacklog;
 }

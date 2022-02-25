@@ -33,4 +33,14 @@ public class UserStoryService {
 	public void deleteUserStory(Integer id) {
 		userStoryRepository.deleteById(id);
 	}
+
+	public List<UserStory> getAllUserStoryBySprintId(Integer id) {
+
+		return userStoryRepository.findBySprintBacklogId(id);
+	}
+
+	/*
+	 * public void updateEtatUserStory(Integer id, UserStory userStory) {
+	 * userStoryRepository.updateEtatUserStory(id, userStory); }
+	 */
 }
