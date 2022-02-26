@@ -28,4 +28,5 @@ public class Projet {
 	@JsonIgnore
 	@OneToMany(mappedBy = "projet")
 	private List<UserStory> userStory;
+
 }

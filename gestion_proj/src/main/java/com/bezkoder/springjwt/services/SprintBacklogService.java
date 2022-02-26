@@ -2,6 +2,7 @@ package com.bezkoder.springjwt.services;
 
 import java.util.List;
 
+import com.bezkoder.springjwt.models.UserStory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,9 @@ public class SprintBacklogService {
 
 	public List<SprintBacklog> getAllSprint(Integer idProjet) {
 		return sprintBacklogRepository.getAllSprint(idProjet);
+	}
+	public List<SprintBacklog> getsprintByProject(Integer id) {
+		return (List<SprintBacklog>) sprintBacklogRepository.getSprintBacklogByiDProject(id);
 	}
 
 }
