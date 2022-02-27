@@ -21,4 +21,8 @@ public class SprintBacklogService {
 		return sprintBacklogRepository.getAllSprint(idProjet);
 	}
 
+	public List<SprintBacklog> getAllSprintByEtat(Integer idProjet) {
+		return sprintBacklogRepository.getAllSprintByEtat(idProjet);
+	}
+
 }

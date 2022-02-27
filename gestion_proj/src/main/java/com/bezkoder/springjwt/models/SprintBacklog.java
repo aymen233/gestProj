@@ -8,6 +8,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -35,5 +36,7 @@ public class SprintBacklog {
 	@JsonIgnore
 	@OneToMany(mappedBy = "sprintBacklog")
 	private List<UserStory> userStory;
+	@ManyToOne
+	private Projet projet;
 
 }
