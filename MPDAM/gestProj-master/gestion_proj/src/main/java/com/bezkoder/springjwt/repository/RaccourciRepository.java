@@ -13,4 +13,5 @@ public interface RaccourciRepository extends JpaRepository<Raccourci,Integer> {
 
     @Query(value = "SELECT * FROM raccourci where projet_id=:id",nativeQuery = true)
     public List<Raccourci> findRaccourciByIdProject(@Param("id") Integer id);
+    //Respostory
 }

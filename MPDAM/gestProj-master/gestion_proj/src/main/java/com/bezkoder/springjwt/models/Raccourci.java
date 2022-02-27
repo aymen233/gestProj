@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Raccourci {
-
+//model
     @Id
     @GeneratedValue
     private Integer id;
