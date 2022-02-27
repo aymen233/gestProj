@@ -14,7 +14,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RestController
 public class RaccourciController {
-//Controller
+//Controller raccourci
     @Autowired
     private RaccourciService raccourciService;
 
