@@ -19,7 +19,6 @@ public class Raccourci {
 	private Integer id;
 	private String nomRaccourci;
 	private String lien;
-
 	@ManyToOne
-	private Projet projet;
+	private Projet project;
 }

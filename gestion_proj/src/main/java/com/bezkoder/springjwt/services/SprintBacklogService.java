@@ -25,4 +25,11 @@ public class SprintBacklogService {
 		return sprintBacklogRepository.getAllSprintByEtat(idProjet);
 	}
 
+	public void updateSprintBacklog(Integer id, SprintBacklog sprintBacklog) {
+		sprintBacklogRepository.save(sprintBacklog);
+	}
+
+	public void deleteSprintBacklog(Integer id) {
+		sprintBacklogRepository.deleteById(id);
+	}
 }

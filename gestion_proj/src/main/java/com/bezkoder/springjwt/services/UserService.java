@@ -44,7 +44,7 @@ public class UserService {
 
 	public void Invitation(Long idUser, Integer idProjet) throws MessagingException {
 		String userName = userRepository.findById(idUser).get().getUsername();
-		String link = "http://localhost:8082/addMember/" + idUser + "/" + idProjet;
+		String link = "http://localhost:8070/addMember/" + idUser + "/" + idProjet;
 		String userEmail = userRepository.findById(idUser).get().getEmail();
 		String projetName = projetRepository.findById(idProjet).get().getNom();
 		String Content = emailform(userName, link, projetName);
@@ -56,6 +56,7 @@ public class UserService {
 		helper.setSubject("Invitation");
 		mailSender.send(message);
 		System.out.println("Email has been sent");
+
 
 	}
 
