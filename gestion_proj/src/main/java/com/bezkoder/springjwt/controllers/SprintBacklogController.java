@@ -44,8 +44,8 @@ public class SprintBacklogController {
 		sprintBacklogService.updateSprintBacklog(id, sprintBacklog);
 	}
 
-	@DeleteMapping("/deleteSprintBacklog/{sprintBacklogId}/{idProjet}")
-	public void deleteSprintBacklog(@PathVariable Integer sprintBacklogId, @PathVariable Integer idProjet) {
+	@DeleteMapping("/deleteSprintBacklog/{sprintBacklogId}")
+	public void deleteSprintBacklog(@PathVariable Integer sprintBacklogId) {
 		userStoryService.deleteUserStoryById(sprintBacklogId);
 		sprintBacklogService.deleteSprintBacklog(sprintBacklogId);
 
