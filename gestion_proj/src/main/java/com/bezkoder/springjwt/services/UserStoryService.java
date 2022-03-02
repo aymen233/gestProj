@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bezkoder.springjwt.models.EtatUserStory;
 import com.bezkoder.springjwt.models.UserStory;
 import com.bezkoder.springjwt.repository.UserStoryRepository;
 
@@ -39,8 +40,12 @@ public class UserStoryService {
 		return userStoryRepository.findBySprintBacklogId(id);
 	}
 
-	/*
-	 * public void updateEtatUserStory(Integer id, UserStory userStory) {
-	 * userStoryRepository.updateEtatUserStory(id, userStory); }
-	 */
+	public void updateEtatUserStory(Integer id, EtatUserStory etat) {
+		userStoryRepository.updateEtatUserStory(id, etat);
+	}
+
+	public void updateSprintIdUserStory(Integer id, Integer sprintId) {
+		userStoryRepository.updateSprintIdUserStory(sprintId, id);
+	}
+
 }

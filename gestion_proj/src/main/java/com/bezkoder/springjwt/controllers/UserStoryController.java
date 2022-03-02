@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bezkoder.springjwt.models.EtatUserStory;
 import com.bezkoder.springjwt.models.UserStory;
 import com.bezkoder.springjwt.services.UserStoryService;
 
@@ -47,11 +48,15 @@ public class UserStoryController {
 		userStoryService.updateUserStory(id, userStory);
 	}
 
-	/*
-	 * @PutMapping("/userStoryEtat/{id}") public void
-	 * updateEtatUserStory(@PathVariable Integer id, @RequestBody UserStory
-	 * userStory) { userStoryService.updateEtatUserStory(id, userStory); }
-	 */
+	@PutMapping("/userStoryEtat/{id}/{etat}")
+	public void updateEtatUserStory(@PathVariable Integer id, @PathVariable EtatUserStory etat) {
+		userStoryService.updateEtatUserStory(id, etat);
+	}
+
+	@PutMapping("/userStorySprintId/{id}/{sprintId}")
+	public void updateEtatUserStory(@PathVariable Integer id, @PathVariable Integer SprintId) {
+		userStoryService.updateSprintIdUserStory(id, SprintId);
+	}
 
 	@DeleteMapping("/userStory/{id}")
 	public void deleteUserStory(@PathVariable Integer id) {
