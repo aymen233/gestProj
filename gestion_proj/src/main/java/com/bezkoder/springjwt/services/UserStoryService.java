@@ -19,25 +19,20 @@ public class UserStoryService {
 		userStoryRepository.save(userStory);
 	}
 
-	public List<UserStory> getAllUserStoryProjet(Integer id) {
-		return (List<UserStory>) userStoryRepository.findByProjetId(id);
-	}
-
 	public Optional<UserStory> getUserStory(Integer id) {
 		return userStoryRepository.findById(id);
 	}
 
-	public void updateUserStory(Integer id, UserStory userStory) {
-		userStoryRepository.save(userStory);
-	}
-
-	public void deleteUserStory(Integer id) {
-		userStoryRepository.deleteById(id);
+	public List<UserStory> getAllUserStoryByProjetId(Integer id) {
+		return userStoryRepository.findByProjetId(id);
 	}
 
 	public List<UserStory> getAllUserStoryBySprintId(Integer id) {
-
 		return userStoryRepository.findBySprintBacklogId(id);
+	}
+
+	public void updateUserStory(Integer id, UserStory userStory) {
+		userStoryRepository.save(userStory);
 	}
 
 	public void updateEtatUserStory(Integer id, EtatUserStory etat) {
@@ -46,6 +41,14 @@ public class UserStoryService {
 
 	public void updateSprintIdUserStory(Integer id, Integer sprintId) {
 		userStoryRepository.updateSprintIdUserStory(sprintId, id);
+	}
+
+	public void deleteUserStory(Integer id) {
+		userStoryRepository.deleteById(id);
+	}
+
+	public void deleteUserStoryById(Integer sprintBacklogId) {
+		userStoryRepository.deleteUserstory(sprintBacklogId);
 	}
 
 }

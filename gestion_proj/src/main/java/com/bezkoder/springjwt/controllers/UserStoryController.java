@@ -23,42 +23,42 @@ public class UserStoryController {
 	@Autowired
 	private UserStoryService userStoryService;
 
-	@PostMapping("/userStory")
+	@PostMapping("/addUserStory")
 	public void addUserStory(@RequestBody UserStory userStory) {
 		userStoryService.addUserStory(userStory);
 	}
 
-	@GetMapping("/userStorys/{id}")
-	public List<UserStory> getAllUserStoryProjet(@PathVariable Integer id) {
-		return userStoryService.getAllUserStoryProjet(id);
-	}
-
-	@GetMapping("/userStorybySprintId/{id}")
-	public List<UserStory> getAllUserStoryBySprintId(@PathVariable Integer id) {
-		return userStoryService.getAllUserStoryBySprintId(id);
-	}
-
-	@GetMapping("/userStory/{id}")
+	@GetMapping("/getUserStory/{id}")
 	public Optional<UserStory> getUserStory(@PathVariable Integer id) {
 		return userStoryService.getUserStory(id);
 	}
 
-	@PutMapping("/userStory/{id}")
+	@GetMapping("/getAllUserStoryByProjetId/{id}")
+	public List<UserStory> getAllUserStoryByProjetId(@PathVariable Integer id) {
+		return userStoryService.getAllUserStoryByProjetId(id);
+	}
+
+	@GetMapping("/getAllUserStoryBySprintId/{sprintBacklogId}")
+	public List<UserStory> getAllUserStoryBySprintId(@PathVariable Integer sprintBacklogId) {
+		return userStoryService.getAllUserStoryBySprintId(sprintBacklogId);
+	}
+
+	@PutMapping("/updateUserStory/{id}")
 	public void updateUserStory(@PathVariable Integer id, @RequestBody UserStory userStory) {
 		userStoryService.updateUserStory(id, userStory);
 	}
 
-	@PutMapping("/userStoryEtat/{id}/{etat}")
+	@PutMapping("/updateEtatUserStory/{id}/{etat}")
 	public void updateEtatUserStory(@PathVariable Integer id, @PathVariable EtatUserStory etat) {
 		userStoryService.updateEtatUserStory(id, etat);
 	}
 
-	@PutMapping("/userStorySprintId/{id}/{sprintId}")
-	public void updateEtatUserStory(@PathVariable Integer id, @PathVariable Integer SprintId) {
+	@PutMapping("/updateSprintIdUserStory/{id}/{sprintId}")
+	public void updateSprintIdUserStory(@PathVariable Integer id, @PathVariable Integer SprintId) {
 		userStoryService.updateSprintIdUserStory(id, SprintId);
 	}
 
-	@DeleteMapping("/userStory/{id}")
+	@DeleteMapping("/deleteUserStory/{id}")
 	public void deleteUserStory(@PathVariable Integer id) {
 		userStoryService.deleteUserStory(id);
 	}

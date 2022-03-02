@@ -27,13 +27,13 @@ public class Projet {
 	private List<User> user;
 
 	@JsonIgnore
-	@OneToMany(mappedBy = "proj")
+	@OneToMany(mappedBy = "projet")
 	private List<SprintBacklog> sprintBacklog;
 	@JsonIgnore
 	@OneToMany(mappedBy = "projet")
 	private List<UserStory> userStory;
 	@JsonIgnore
-	@OneToMany(mappedBy = "project")
+	@OneToMany(mappedBy = "projet")
 	private List<Raccourci> raccourci;
 
 }
