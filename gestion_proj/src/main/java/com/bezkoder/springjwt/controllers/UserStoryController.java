@@ -32,9 +32,9 @@ public class UserStoryController {
 		return userStoryService.getAllUserStoryProjet(id);
 	}
 
-	@GetMapping("/userStorybySprintId/{id}")
-	public List<UserStory> getAllUserStoryBySprintId(@PathVariable Integer id) {
-		return userStoryService.getAllUserStoryBySprintId(id);
+	@GetMapping("/userStorybySprintId/{sprintBacklogId}/{idProjet}")
+	public List<UserStory> getAllUserStoryBySprintId(@PathVariable Integer sprintBacklogId,@PathVariable Integer idProjet) {
+		return userStoryService.getAllUserStoryBySprintId(sprintBacklogId,idProjet);
 	}
 
 	@GetMapping("/userStory/{id}")
