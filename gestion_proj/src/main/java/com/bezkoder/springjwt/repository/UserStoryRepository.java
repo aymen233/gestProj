@@ -22,8 +22,7 @@ public interface UserStoryRepository extends CrudRepository<UserStory, Integer> 
 	@Transactional
 	@Query(value = "DELETE FROM user_story WHERE user_story.sprint_backlog_id=?1 and user_story.projet_id=?2 ", nativeQuery = true)
 	Integer deleteUserstory(Integer sprintBacklogId,Integer idProjet);
-	@Query(value = "Select * FROM user_story WHERE user_story.sprint_backlog_id=?1 and user_story.projet_id=?2 ", nativeQuery = true)
-	List<UserStory> getUserstoriesByIdSprintBacklog(Integer sprintBacklogId,Integer idProjet);
+
 
 	/*
 	 * @Query(value = "Update user_story SET projet=?, nativeQuery = true) void

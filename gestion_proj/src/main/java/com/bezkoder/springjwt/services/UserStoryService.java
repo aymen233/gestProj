@@ -42,9 +42,9 @@ public class UserStoryService {
 	public void deleteUserStoryById(Integer sprintBacklogId,Integer idProjet) {
 		userStoryRepository.deleteUserstory(sprintBacklogId,idProjet);
 	}
-	public List<UserStory> getAllUserStoryBySprintId(Integer sprintBacklogId,Integer idProjet) {
+	public List<UserStory> getAllUserStoryBySprintId(Integer sprintBacklogId) {
 
-		return userStoryRepository.getUserstoriesByIdSprintBacklog(sprintBacklogId,idProjet);
+		return userStoryRepository.findByProjetId(sprintBacklogId);
 	}
 
 	/*
