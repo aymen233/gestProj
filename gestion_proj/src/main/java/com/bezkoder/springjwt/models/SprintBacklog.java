@@ -29,14 +29,14 @@ public class SprintBacklog {
 	private String nom;
 	@Enumerated(EnumType.STRING)
 	private EtatSprint etat;
-	@JsonFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dateDebut;
-	@JsonFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dateFin;
 	@JsonIgnore
 	@OneToMany(mappedBy = "sprintBacklog")
 	private List<UserStory> userStory;
 	@ManyToOne
-	private Projet projet;
+	private Projet proj;
 
 }

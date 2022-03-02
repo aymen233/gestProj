@@ -11,6 +11,6 @@ import com.bezkoder.springjwt.models.Raccourci;
 
 @Repository
 public interface RaccourciRepository extends JpaRepository<Raccourci, Integer> {
-	@Query(value = "SELECT * FROM raccourci where projet_id=:id", nativeQuery = true)
+	@Query(value = "SELECT * FROM raccourci where project_id=:id", nativeQuery = true)
 	public List<Raccourci> findRaccourciByIdProject(@Param("id") Integer id);
 }

@@ -25,9 +25,15 @@ public class Projet {
 	private String nom;
 	@ManyToMany
 	private List<User> user;
+
+	@JsonIgnore
+	@OneToMany(mappedBy = "proj")
+	private List<SprintBacklog> sprintBacklog;
 	@JsonIgnore
 	@OneToMany(mappedBy = "projet")
 	private List<UserStory> userStory;
-	@OneToMany(mappedBy = "projet")
-	private List<SprintBacklog> sprintBacklog;
+	@JsonIgnore
+	@OneToMany(mappedBy = "project")
+	private List<Raccourci> raccourci;
+
 }
