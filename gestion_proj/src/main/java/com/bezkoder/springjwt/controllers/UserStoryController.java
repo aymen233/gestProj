@@ -51,13 +51,11 @@ public class UserStoryController {
 		userStoryService.resetUserStory(id);
 	}
 
-<<<<<<< Updated upstream
 	/*
 	 * @PutMapping("/userStoryEtat/{id}") public void
 	 * updateEtatUserStory(@PathVariable Integer id, @RequestBody UserStory
 	 * userStory) { userStoryService.updateEtatUserStory(id, userStory); }
 	 */
-=======
 	@PutMapping("/updateEtatUserStory/{id}/{etat}")
 	public void updateEtatUserStory(@PathVariable Integer id, @PathVariable EtatUserStory etat) {
 		userStoryService.updateEtatUserStory(id, etat);
@@ -67,7 +65,6 @@ public class UserStoryController {
 	public void updateSprintIdUserStory(@PathVariable Integer id, @PathVariable Integer SprintId) {
 		userStoryService.updateSprintIdUserStory(id, SprintId);
 	}
->>>>>>> Stashed changes
 
 	@DeleteMapping("/userStory/{id}")
 	public void deleteUserStory(@PathVariable Integer id) {
