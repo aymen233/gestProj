@@ -31,6 +31,6 @@ public class SprintBacklog {
 	@OneToMany(mappedBy = "sprintBacklog")
 	private List<UserStory> userStory;
 	@ManyToOne
-	private Projet projet;
+	private Projet proj;
 
 }

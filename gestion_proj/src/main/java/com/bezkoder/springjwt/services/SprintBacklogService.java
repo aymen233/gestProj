@@ -25,4 +25,18 @@ public class SprintBacklogService {
 		return (List<SprintBacklog>) sprintBacklogRepository.getSprintBacklogByiDProject(id);
 	}
 
+<<<<<<< Updated upstream
+=======
+	public void updateSprintBacklog(Integer id, SprintBacklog sprintBacklog) {
+		sprintBacklogRepository.save(sprintBacklog);
+	}
+
+	public void deleteSprintBacklog(Integer id) {
+		sprintBacklogRepository.deleteById(id);
+	}
+	public void demmareSprintBacklog(Integer idSprintBacklog) {
+		sprintBacklogRepository.demmareSprintBacklog(idSprintBacklog);
+	}
+
+>>>>>>> Stashed changes
 }

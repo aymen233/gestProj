@@ -46,15 +46,44 @@ public class UserStoryController {
 	public void updateUserStory(@PathVariable Integer id, @RequestBody UserStory userStory) {
 		userStoryService.updateUserStory(id, userStory);
 	}
+	@PutMapping("/resetUserstory/{id}")
+	public void resetuserStory(@PathVariable Integer id) {
+		userStoryService.resetUserStory(id);
+	}
 
+<<<<<<< Updated upstream
 	/*
 	 * @PutMapping("/userStoryEtat/{id}") public void
 	 * updateEtatUserStory(@PathVariable Integer id, @RequestBody UserStory
 	 * userStory) { userStoryService.updateEtatUserStory(id, userStory); }
 	 */
+=======
+	@PutMapping("/updateEtatUserStory/{id}/{etat}")
+	public void updateEtatUserStory(@PathVariable Integer id, @PathVariable EtatUserStory etat) {
+		userStoryService.updateEtatUserStory(id, etat);
+	}
+
+	@PutMapping("/updateSprintIdUserStory/{id}/{SprintId}")
+	public void updateSprintIdUserStory(@PathVariable Integer id, @PathVariable Integer SprintId) {
+		userStoryService.updateSprintIdUserStory(id, SprintId);
+	}
+>>>>>>> Stashed changes
 
 	@DeleteMapping("/userStory/{id}")
 	public void deleteUserStory(@PathVariable Integer id) {
 		userStoryService.deleteUserStory(id);
+	}
+
+	@GetMapping("/getToDouserstory/{Id}")
+	public List<UserStory> getToDoUs(@PathVariable Integer Id) {
+		return userStoryService.getTodoUserStory(Id);
+	}
+	@GetMapping("/getDoinguserstory/{Id}")
+	public List<UserStory> getToDoingUs(@PathVariable Integer Id) {
+		return userStoryService.getDoingUserStory(Id);
+	}
+	@GetMapping("/getDoneuserstory/{Id}")
+	public List<UserStory> getToDoneUs(@PathVariable Integer Id) {
+		return userStoryService.getDoneUserStory(Id);
 	}
 }

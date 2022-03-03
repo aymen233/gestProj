@@ -23,5 +23,9 @@ public class SprintBacklogController {
 	public List<SprintBacklog> getAllSprint(@PathVariable Integer idProjet) {
 		return sprintBacklogService.getsprintByProject(idProjet);
 	}
+	@PutMapping("/demmarreSprintBacklog/{idSprintBacklog}")
+	public void demmareSprintBacklog(@PathVariable Integer idSprintBacklog) {
+		sprintBacklogService.demmareSprintBacklog(idSprintBacklog);
+	}
 
 }

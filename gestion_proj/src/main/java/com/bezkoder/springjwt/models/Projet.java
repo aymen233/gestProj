@@ -25,8 +25,21 @@ public class Projet {
 	private String nom;
 	@ManyToMany
 	private List<User> user;
+<<<<<<< Updated upstream
 	@JsonIgnore
 	@OneToMany(mappedBy = "projet")
 	private List<UserStory> userStory;
+=======
+
+	@JsonIgnore
+	@OneToMany(mappedBy = "proj")
+	private List<SprintBacklog> sprintBacklog;
+	@JsonIgnore
+	@OneToMany(mappedBy = "projet")
+	private List<UserStory> userStory;
+	@JsonIgnore
+	@OneToMany(mappedBy = "project")
+	private List<Raccourci> raccourci;
+>>>>>>> Stashed changes
 
 }
