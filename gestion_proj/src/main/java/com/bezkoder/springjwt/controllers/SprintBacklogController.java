@@ -33,6 +33,14 @@ public class SprintBacklogController {
 	public List<SprintBacklog> getAllSprint(@PathVariable Integer idProjet) {
 		return sprintBacklogService.getAllSprint(idProjet);
 	}
+	@GetMapping("/getDemarreSprint/{idProjet}")
+	public List<SprintBacklog> getdemarresprint(@PathVariable Integer idProjet) {
+		return sprintBacklogService.getDemarreSprint(idProjet);
+	}
+	@PutMapping("/demmarreSprintBacklog/{idSprintBacklog}")
+	public void demmareSprintBacklog(@PathVariable Integer idSprintBacklog) {
+		sprintBacklogService.demmareSprintBacklog(idSprintBacklog);
+	}
 
 	@GetMapping("/getAllSprintByEtat/{idProjet}")
 	public List<SprintBacklog> getAllSprintByEtat(@PathVariable Integer idProjet) {

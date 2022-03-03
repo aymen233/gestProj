@@ -3,13 +3,7 @@ package com.bezkoder.springjwt.models;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -37,6 +31,6 @@ public class SprintBacklog {
 	@OneToMany(mappedBy = "sprintBacklog")
 	private List<UserStory> userStory;
 	@ManyToOne
-	private Projet projet;
+	private Projet proj;
 
 }

@@ -35,6 +35,7 @@ public class UserStoryService {
 		userStoryRepository.save(userStory);
 	}
 
+
 	public void updateEtatUserStory(Integer id, EtatUserStory etat) {
 		userStoryRepository.updateEtatUserStory(id, etat);
 	}
@@ -43,12 +44,27 @@ public class UserStoryService {
 		userStoryRepository.updateSprintIdUserStory(sprintId, id);
 	}
 
-	public void deleteUserStory(Integer id) {
-		userStoryRepository.deleteById(id);
+	public void resetUserStory(Integer id) {
+		userStoryRepository.resetuserStory( id);
 	}
+
+	public void deleteUserStory(Integer id) {userStoryRepository.deleteById(id);}
+	public void doingUs(Integer id) {userStoryRepository.doingUs(id);}
+	public void todoUs(Integer id) {userStoryRepository.todoUs(id);}
+	public void doneUs(Integer id) {userStoryRepository.doneUs(id);}
 
 	public void deleteUserStoryById(Integer sprintBacklogId) {
 		userStoryRepository.deleteUserstory(sprintBacklogId);
 	}
+
+
+	/*
+	 * public void updateEtatUserStory(Integer id, UserStory userStory) {
+	 * userStoryRepository.updateEtatUserStory(id, userStory); }
+	 */
+	public List<UserStory> getTodoUserStory(Integer id){return userStoryRepository.findTodoStory(id);}
+	public List<UserStory> getDoingUserStory(Integer id){return userStoryRepository.finddoingStory(id);}
+	public List<UserStory> getDoneUserStory(Integer id){return userStoryRepository.findDoneStory(id);}
+
 
 }
